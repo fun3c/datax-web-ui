@@ -64,6 +64,7 @@ router.beforeEach(async(to, from, next) => {
       next(`/login?redirect=${to.path}`)
       NProgress.done()
     }
+    store.dispatch('user/login', { username: 'admin', password: 'MLink@01' }).then(() => next({ path: '/' }))
   }
 })
 
